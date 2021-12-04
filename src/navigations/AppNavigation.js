@@ -10,6 +10,9 @@ import DrawerContainer from '../screens/DrawerContainer/DrawerContainer';
 import IngredientScreen from '../screens/Ingredient/IngredientScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
 import IngredientsDetailsScreen from '../screens/IngredientsDetails/IngredientsDetailsScreen';
+import Login from '../screens/auth/Login';
+import Register from '../screens/auth/Register';
+import ForgetPassword from '../screens/auth/ForgetPassword';
 
  const Stack = createStackNavigator();
 
@@ -25,6 +28,7 @@ function MainNavigator() {
           }
       }}
     >
+      <Stack.Screen name='Login' component={Login} />
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Categories' component={CategoriesScreen}/>
       <Stack.Screen name='Recipe' component={RecipeScreen}/>
@@ -32,6 +36,9 @@ function MainNavigator() {
       <Stack.Screen name='Ingredient' component={IngredientScreen} />
       <Stack.Screen name='Search' component={SearchScreen} />
       <Stack.Screen name='IngredientsDetails' component={IngredientsDetailsScreen} />
+      
+      <Stack.Screen name='Register' component={Register} />
+      <Stack.Screen name='ForgetPassword' component={ForgetPassword} />
     </Stack.Navigator>
   )
 } 

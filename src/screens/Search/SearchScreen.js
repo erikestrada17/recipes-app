@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { FlatList, Text, View, Image, TouchableHighlight, Pressable } from "react-native";
 import styles from "./styles";
 import MenuImage from "../../components/MenuImage/MenuImage";
-import { getCategoryName, getRecipesByRecipeName, getRecipesByCategoryName, getRecipesByIngredientName } from "../../data/MockDataAPI";
+import { getCategoryName, getRecipesByRecipeName, getRecipesByCategoryName, getRecipesByIngredientName } from "../../database/MockDataAPI";
 import { TextInput } from "react-native-gesture-handler";
 
 export default function SearchScreen(props) {
@@ -45,8 +45,7 @@ export default function SearchScreen(props) {
     var recipeArray2 = getRecipesByCategoryName(text);
     var recipeArray3 = getRecipesByIngredientName(text);
     var aux = recipeArray1.concat(recipeArray2);
-    var recipeArray = [...new Set(aux)];
-
+    var recipeArray = [...new Set(recipeArray3.concat(aux))];
     if (text == "") {
       setData([]);
     } else {

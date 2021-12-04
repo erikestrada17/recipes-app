@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { FlatList, Text, View, TouchableHighlight, Image } from "react-native";
 import styles from "./styles";
-import { getRecipes, getCategoryName } from "../../data/MockDataAPI";
+import { getRecipes, getCategoryName } from "../../database/MockDataAPI";
 
 export default function RecipesListScreen(props) {
   const { navigation, route } = props;
